@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Rule Name: Estándares de Rendimiento Web (Web Performance)
+
+[BEGIN RULE]
+
+1. Principio Rector:
+
+La aplicación debe ser de "alto rendimiento". El rendimiento no es una característica secundaria, sino un requisito fundamental del producto final.
+
+2. Prácticas de Optimización Obligatorias:
+
+Carga Perezosa (Lazy Loading):
+
+Todos los componentes de página (ubicados en /src/pages) deben implementarse utilizando React.lazy() y Suspense.
+
+El objetivo es minimizar el tamaño del paquete de JavaScript inicial (initial chunk) y acelerar el tiempo de carga percibido por el usuario (First Contentful Paint).
+
+Memoización Inteligente:
+
+Componentes: Envuelve en React.memo aquellos componentes que reciben props y se renderizan con frecuencia, para evitar re-renderizados innecesarios.
+
+Valores y Funciones: Utiliza useMemo para memorizar valores resultantes de cálculos costosos. Utiliza useCallback para memorizar funciones que se pasan como props a componentes hijos optimizados con React.memo.
+[END RULE]

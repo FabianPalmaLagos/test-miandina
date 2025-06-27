@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Rule Name: Calidad de Código y Consistencia Automática
+
+[BEGIN RULE]
+
+1. Principio Rector:
+
+Un código funcional no es suficiente. El código debe ser limpio, legible, mantenible y consistente en todo el proyecto. Esta consistencia debe ser garantizada por herramientas automáticas, no por la memoria del desarrollador.
+
+2. Prácticas Clave de Calidad:
+Formateador de Código (Prettier): Es mandatorio integrar Prettier en el proyecto para automatizar el formato del código (espaciado, puntos y comas, saltos de línea, etc.). Esto elimina cualquier debate sobre estilo.
+
+Linter de Código (ESLint): Es mandatorio configurar ESLint con plugins específicos para React (eslint-plugin-react, eslint-plugin-react-hooks, eslint-plugin-jsx-a11y) para detectar errores de programación, malas prácticas y problemas de accesibilidad de forma temprana.
+
+Automatización con Git Hooks: Se debe utilizar husky y lint-staged para ejecutar automáticamente Prettier y ESLint sobre los archivos modificados antes de cada commit. Esto asegura que ningún código que no cumpla con los estándares sea subido al repositorio.
+
+Comentarios con Propósito: Los comentarios en el código no deben explicar qué hace el código (el código debe ser auto-explicativo), sino por qué se tomó una decisión de implementación particular, especialmente si la lógica es compleja o contraintuitiva.
+
+[END RULE]

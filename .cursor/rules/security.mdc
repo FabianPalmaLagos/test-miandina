@@ -1,0 +1,31 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Rule Name: Gestión de Dependencias y Seguridad
+
+[BEGIN RULE]
+
+1. Principio Rector:
+
+Mantener una superficie de dependencias mínima para garantizar un proyecto ligero, seguro y mantenible. Cada nueva librería es un pasivo potencial.
+
+2. Protocolo de Inclusión de Dependencias:
+
+Cuestionamiento Estricto: Antes de proponer la adición de una nueva dependencia de terceros, se debe responder satisfactoriamente a las siguientes preguntas:
+
+¿El problema no puede ser resuelto de manera eficiente con la pila tecnológica actual (React 18+, Vite, MUI Core)?
+
+¿La librería cuenta con mantenimiento activo, una comunidad saludable y buena documentación?
+
+¿Cuál es su impacto cuantificable en el tamaño final del bundle y el rendimiento general?
+
+Principio de "Una Sola Vía": Debe existir una única librería aprobada para cada funcionalidad clave (MUI para UI, Vitest para pruebas, etc.). Se prohíbe la introducción de librerías redundantes.
+
+3. Protocolo de Seguridad:
+
+Auditoría Regular: Es obligatorio ejecutar npm audit (o yarn audit) de forma periódica para identificar vulnerabilidades conocidas en las dependencias del proyecto.
+
+Actualización Proactiva: Las vulnerabilidades críticas y altas deben ser atendidas y parchadas con prioridad, siguiendo las recomendaciones de seguridad.
+[END RULE]

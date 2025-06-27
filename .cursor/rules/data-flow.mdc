@@ -1,0 +1,26 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Rule Name: Flujo de Datos Unidireccional e Inmutabilidad
+
+[BEGIN RULE]
+
+1. Principio Rector:
+
+La gestión del estado debe ser predecible, depurable y segura. Se prohíben las mutaciones directas del estado para prevenir efectos secundarios inesperados y re-renderizados inconsistentes.
+
+2. Prácticas Clave de Manejo de Estado:
+
+Flujo de Datos Unidireccional: El estado fluye en una sola dirección ("hacia abajo"), desde los componentes contenedores (o Contexts) hacia los componentes hijos. Los componentes hijos no modifican el estado directamente; en su lugar, invocan funciones (callbacks) pasadas como props para solicitar un cambio de estado en la fuente original.
+
+Inmutabilidad Absoluta: Al actualizar el estado de un objeto o un array (ej. el Carrito en CartContext), nunca se debe mutar el original. Siempre se debe crear una nueva copia con los cambios aplicados, utilizando operadores como el spread operator (...) de JavaScript o métodos de array que devuelven un nuevo array (.map(), .filter()).
+
+Incorrecto (Mutación): cartItems.push(newProduct);
+
+Correcto (Inmutabilidad): setCartItems([...cartItems, newProduct]);
+
+Prop Drilling Mínimo: Si se necesita pasar props a través de más de dos niveles de componentes que no las utilizan, es una señal de que el estado debe ser elevado a un Context de React.
+
+[END RULE]

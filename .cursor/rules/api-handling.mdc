@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Rule Name: Simulación de API y Contratos de Datos
+
+[BEGIN RULE]
+
+1. Principio Rector:
+
+Aunque el proyecto es "front-end puro", debe desarrollarse como si un backend fuera a existir en el futuro. Esto asegura una transición fluida y evita tener que refactorizar masivamente la lógica de obtención de datos.
+
+2. Prácticas Clave de Simulación:
+
+Capa de Servicios Aislada: Toda la lógica para obtener datos (incluso desde los archivos JSON locales) debe estar centralizada en una "capa de servicios". Por ejemplo, crear archivos como /src/services/productService.js o /src/services/notificationService.js.
+
+Estos servicios exportarán funciones asíncronas (ej. getProducts(), getLastOrder()) que simulan una llamada de red y devuelven los datos del JSON.
+
+Los componentes nunca deben importar directamente desde /src/data. Siempre deben llamar a una función de la capa de servicios.
+Contratos de Datos Explícitos: Se debe definir y documentar la "forma" (shape) de los objetos de datos clave (Product, Notification, CartItem). Si se usara TypeScript, esto se haría con interfaces o types. En JavaScript, se puede lograr con comentarios JSDoc. Esto establece un "contrato" claro que la UI espera recibir.
+
+Simulación de Latencia y Errores: Las funciones en la capa de servicios deben simular una latencia de red realista (ej. con un setTimeout de 200-500ms) para poder desarrollar y probar los estados de carga (loading) de la UI de manera efectiva. Opcionalmente, pueden incluir lógica para simular fallos de forma aleatoria y probar los Error Boundaries.
+
+[END RULE]

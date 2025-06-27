@@ -1,0 +1,67 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Rule Name: Mi Andina - Guía de Estilo y Buenas Prácticas
+
+[BEGIN RULE]
+
+1. Principio Fundamental: Fidelidad al Plan
+
+Toda implementación debe adherirse estrictamente a la Pila Tecnológica, la arquitectura y los flujos definidos en el archivo README.md. No se introducirán librerías o patrones no especificados sin una justificación y aprobación previas.
+
+2. Arquitectura y Estructura de Carpetas
+
+Mandatorio: Se debe respetar la estructura de carpetas definida en el README.md.
+
+/components: Para componentes de UI reutilizables.
+
+/contexts: Para los Contextos de React que gestionan el estado global.
+
+/pages: Para componentes que representan vistas o pantallas completas.
+
+/hooks: Para hooks personalizados que encapsulan lógica reutilizable.
+
+/data: Para archivos JSON con datos simulados.
+
+3. Desarrollo de Componentes
+
+Librería de UI: Todos los componentes visuales deben construirse utilizando Material-UI (MUI Core) para garantizar la consistencia visual y de maquetación.
+
+Reutilización: Prioriza la creación de componentes genéricos y reutilizables (/components/common) siempre que sea posible. Los componentes específicos de una vista, como el ProductoCard, deben ser autocontenidos y recibir sus datos a través de props.
+
+Nomenclatura: Los nombres de archivo y de componente deben usar PascalCase (ej. ProductoCard.jsx).
+
+4. Manejo de Estado
+Estado Local: Usa el hook useState de React para el estado que es interno y exclusivo de un componente (ej. la cantidad seleccionada en un ProductoCard antes de agregarlo al carrito).
+
+Estado Global: Para el estado que debe ser compartido a través de la aplicación, como el Carrito de Compras, se debe utilizar la API Context de React.
+
+Toda la lógica del carrito (agregar, eliminar, actualizar) debe estar centralizada en el CartContext.jsx.
+
+La persistencia del carrito se manejará exclusivamente a través de sessionStorage dentro del CartContext.
+
+El acceso al contexto desde los componentes se hará a través del hook personalizado useCart().
+
+5. Código y Terminología de Dominio
+
+Consistencia: Las variables, funciones y props deben usar camelCase (ej. addProductToCart).
+
+Glosario: Es mandatorio utilizar la terminología definida en el glosario del README.md en todo el código para mantener la coherencia.
+
+Usa ProductoCard, no ProductItem o ItemCard.
+
+Usa PedidoPurete, no QuickBuy o FastOrder.
+
+Usa Carrito, no Basket o ShoppingBag.
+
+6. Pruebas (Testing)
+
+TDD es la Norma: Se debe seguir un enfoque de Desarrollo Guiado por Pruebas (TDD). Las pruebas deben escribirse antes o en paralelo al código de la funcionalidad.
+
+Cobertura: Todos los componentes y hooks deben tener sus pruebas unitarias correspondientes. Los flujos de usuario clave (ej. "agregar al carrito", "repetir pedido") deben tener pruebas de integración.
+
+Calidad de Pruebas: Las pruebas deben ser significativas y validar el comportamiento esperado por el usuario, no solo la renderización de un componente.
+
+[END RULE]
