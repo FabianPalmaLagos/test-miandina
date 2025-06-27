@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Rule Name: Protocolo de Fidelidad a la Interfaz (UI/UX Fidelity)
+
+[BEGIN RULE]
+
+1. Principio Rector:
+
+La única fuente de verdad para la interfaz de usuario (UI) y la experiencia de usuario (UX) son las plantillas de Figma proporcionadas. El objetivo es una implementación fiel, no una interpretación del desarrollador.
+
+2. Prácticas Clave de Implementación:
+
+Referencia Constante: Al desarrollar cualquier componente o vista, el diseño de Figma correspondiente debe ser la referencia principal y constante para espaciado, tipografía, colores, dimensiones y flujos.
+
+Adopción de MUI: Utiliza los componentes de Material-UI como base para construir la interfaz. Si existe una ligera diferencia entre el diseño y un componente de MUI, se prioriza la consistencia y robustez del componente de la librería sobre una personalización "pixel-perfect" que introduzca fragilidad.
+
+3. Protocolo de Discrepancia:
+
+Detener y Documentar: Si se detecta una inconsistencia entre el diseño de Figma y la implementación lógica o factible (ej: un estado de error no contemplado, un flujo de usuario ambiguo), el desarrollo de esa funcionalidad debe detenerse inmediatamente.
+
+Prohibida la Improvisación: Está estrictamente prohibido improvisar o crear una solución no especificada en el diseño.
+
+Solicitar Clarificación: El deber del desarrollador es documentar la discrepancia de forma clara y solicitar una clarificación antes de proceder.
+[END RULE]

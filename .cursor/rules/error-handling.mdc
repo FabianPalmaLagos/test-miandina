@@ -1,0 +1,25 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+[BEGIN RULE]
+
+1. Principio Rector:
+
+La aplicación debe ser robusta y anticipar fallos. Los errores nunca deben "romper" la aplicación por completo. La experiencia del usuario debe ser predecible y útil incluso cuando las cosas no salen como se esperaba.
+
+2. Prácticas Clave de Resiliencia:
+
+Límites de Error (Error Boundaries): Las secciones principales de la aplicación (ej. la lista de productos, el Pedido Purete) deben estar envueltas en Error Boundaries de React. Si un componente dentro de esta sección falla, no debe colapsar la aplicación entera; en su lugar, se debe mostrar una UI de respaldo (ej. "Ocurrió un error al cargar esta sección").
+
+Estados de Carga y Vacío: Todo componente que dependa de datos asíncronos (incluso si se simulan desde un products.json) debe manejar explícitamente tres estados visuales:
+
+loading: Mostrando un indicador de carga (ej. Skeleton o CircularProgress de MUI).
+
+success: Mostrando los datos.
+error: Mostrando un mensaje de error claro y, si es posible, una acción para reintentar.
+
+Notificaciones de Error al Usuario: Las acciones del usuario que pueden fallar (ej. simular un pago, aplicar un cupón) deben comunicar el fallo de forma clara y no intrusiva, utilizando un componente Snackbar de MUI para mostrar el mensaje de error.
+
+[END RULE]

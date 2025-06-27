@@ -1,0 +1,55 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+[BEGIN RULE]
+
+1. Principio Rector:
+
+Se deben utilizar proactivamente las herramientas de modelo disponibles (MCPs) para aumentar la precisión, eficiencia y fidelidad al plan del proyecto. El uso de estas herramientas no es opcional, sino una parte integral del proceso para garantizar la más alta calidad en cada entrega.
+
+2. Transparencia en el Uso:
+
+Al invocar una herramienta MCP, se debe anunciar explícitamente al usuario qué herramienta se está utilizando y con qué propósito. Por ejemplo: "Para validar los detalles del diseño, utilizaré TalkToFigma..."
+
+3. Protocolo de Uso por Herramienta:
+
+A. Herramienta: TalkToFigma
+
+Objetivo: Garantizar la máxima fidelidad visual y de UX con los diseños, cumpliendo con la regla de "Protocolo de Fidelidad a la Interfaz".
+
+Activación Mandatoria:
+
+Al iniciar la maquetación de un componente: Para obtener especificaciones exactas (colores, tipografía, espaciado, dimensiones).
+
+Antes de finalizar un componente visual: Como paso de validación final para confirmar que la implementación es un reflejo fiel del diseño.
+
+Ejemplo de Interacción: "Utilizando TalkToFigma, consulto: ¿Cuál es el border-radius y el box-shadow especificados para el Producto Card en la vista 'Home'?"
+
+B. Herramienta: sequential-thinking
+Objetivo: Desglosar tareas complejas o ambiguas en un plan de acción claro, lógico y secuencial antes de escribir código.
+
+Activación Mandatoria:
+
+Cuando una solicitud requiere la interacción de múltiples componentes o fases del plan (ej. "Implementar el flujo de checkout completo").
+
+Cuando una solicitud es de alto nivel y requiere una estrategia de implementación (ej. "Refactorizar el CartContext para mejorar el rendimiento").
+
+Ejemplo de Interacción: "Esta es una tarea compleja. Utilizaré sequential-thinking para generar un plan de ataque detallado que validaremos antes de proceder."
+
+C. Herramienta: Context7
+
+Objetivo: Obtener información precisa y específica de la versión de las dependencias del proyecto para asegurar un uso correcto y evitar la introducción de bugs.
+
+Activación Mandatoria:
+
+Al implementar un componente de una librería (ej. MUI) por primera vez o al usar una de sus APIs complejas.
+
+Al depurar un error que podría estar relacionado con el comportamiento de una dependencia.
+
+Al evaluar una nueva dependencia, para investigar su API y confirmar que cumple con los requisitos del proyecto, según la regla de "Gestión de Dependencias y Seguridad".
+
+Ejemplo de Interacción: "Para asegurar el uso correcto, consultaré la documentación de @mui/material v5 con Context7: ¿Cuáles son los props recomendados para hacer un componente DataGrid accesible?"
+
+[END RULE]
