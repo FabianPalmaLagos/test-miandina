@@ -12,8 +12,12 @@ import {
   ShoppingCart as ShoppingCartIcon 
 } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
+import useCart from '../../hooks/useCart';
 
-function Header({ notificationCount = 0, cartCount = 0 }) {
+function Header({ notificationCount = 0 }) {
+  const { getCartItemsCount } = useCart();
+  const cartCount = getCartItemsCount();
+
   return (
     <AppBar 
       position="sticky" 
@@ -31,52 +35,64 @@ function Header({ notificationCount = 0, cartCount = 0 }) {
           color="inherit"
           aria-label="menu"
           data-testid="menu-button"
+          sx={{ color: 'primary.main' }}
         >
           <MenuIcon />
         </IconButton>
 
         {/* Logo centrado */}
-        <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1, justifyContent: 'center' }}>
           <Typography
-            variant="h6"
+            variant="h5"
             component={Link}
             to="/"
-            data-testid="logo-button"
             sx={{
-              textDecoration: 'none',
-              color: 'primary.main',
               fontWeight: 'bold',
+              color: 'primary.main',
+              textDecoration: 'none',
               '&:hover': {
-                textDecoration: 'none',
-              },
+                textDecoration: 'none'
+              }
             }}
           >
-            🛒 Mi Andina
+            Mi Andina
           </Typography>
         </Box>
 
-        {/* Iconos de la derecha */}
-        <Box sx={{ display: 'flex', gap: 1 }}>
+        {/* Iconos a la derecha */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           {/* Badge de notificaciones */}
           <IconButton
-            color="inherit"
             component={Link}
             to="/notificaciones"
-            data-testid="notification-badge"
+            color="inherit"
+            aria-label="notificaciones"
+            data-testid="notifications-button"
+            sx={{ color: 'text.primary' }}
           >
-            <Badge badgeContent={notificationCount} color="error">
+            <Badge 
+              badgeContent={notificationCount} 
+              color="error"
+              data-testid="notifications-badge"
+            >
               <NotificationsIcon />
             </Badge>
           </IconButton>
 
           {/* Badge del carrito */}
           <IconButton
-            color="inherit"
             component={Link}
             to="/carrito"
-            data-testid="cart-badge"
+            color="inherit"
+            aria-label="carrito"
+            data-testid="cart-button"
+            sx={{ color: 'text.primary' }}
           >
-            <Badge badgeContent={cartCount} color="primary">
+            <Badge 
+              badgeContent={cartCount} 
+              color="primary"
+              data-testid="cart-badge"
+            >
               <ShoppingCartIcon />
             </Badge>
           </IconButton>

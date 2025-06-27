@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "Coca-Cola Sin Azúcar 1,5 LT",
+    "description": "Botella Plástico No Retornable 1.5 Lts 1X6",
+    "price": 10129,
+    "oldPrice": 11005,
+    "unitPrice": 1688,
+    "hasPromotion": true,
+    "image": "https://via.placeholder.com/113x113/ff0000/ffffff?text=Coca-Cola"
+  },
+  {
+    "id": 2,
+    "name": "Agua Mineral Natural 500ml",
+    "description": "Botella de agua mineral natural sin gas",
+    "price": 1500,
+    "unitPrice": 1500,
+    "hasPromotion": false,
+    "image": "https://via.placeholder.com/113x113/0066cc/ffffff?text=Agua"
+  },
+  {
+    "id": 3,
+    "name": "Sprite 2 Litros",
+    "description": "Bebida gaseosa sabor lima-limón",
+    "price": 2890,
+    "oldPrice": 3200,
+    "unitPrice": 1445,
+    "hasPromotion": true,
+    "image": "https://via.placeholder.com/113x113/00cc66/ffffff?text=Sprite"
+  },
+  {
+    "id": 4,
+    "name": "Fanta Naranja 350ml",
+    "description": "Bebida gaseosa sabor naranja lata",
+    "price": 890,
+    "unitPrice": 890,
+    "hasPromotion": false,
+    "image": "https://via.placeholder.com/113x113/ff9900/ffffff?text=Fanta"
+  },
+  {
+    "id": 5,
+    "name": "Cerveza Corona 330ml",
+    "description": "Cerveza premium importada botella",
+    "price": 2150,
+    "oldPrice": 2500,
+    "unitPrice": 2150,
+    "hasPromotion": true,
+    "image": "https://via.placeholder.com/113x113/ffcc00/000000?text=Corona"
+  },
+  {
+    "id": 6,
+    "name": "Jugo Natural Naranja 1L",
+    "description": "Jugo 100% natural sin conservantes",
+    "price": 3200,
+    "unitPrice": 3200,
+    "hasPromotion": false,
+    "image": "https://via.placeholder.com/113x113/ff6600/ffffff?text=Jugo"
+  }
+] 
